@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        
+        <script>
+
+            var xmlhttp;
+
+            window.onload = function()
+            {
+                document.addEventListener('deviceready', init, false);
+            }
+
+            function init()
+            {
+                document.getElementById('btnStore').addEventListener('click', sendData, false);
+                xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = serverResponse;
+            }
+
+            function sendData()
+            {
+                var url = 'http://localhost/PhoneGapTutorial/LearnToProgram/StoreOnServer/www/store.php?band1='
+                url += document.getElementById('band1').value;
+                url += "&band2=" + document.getElementById('band2').value;
+                url += "&band3=" + document.getElementById('band3').value;
+                xmlhttp.open('GET', url , false);
+                xmlhttp.send();
+            }
+
+
+            function serverResponse()
+            {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200);
+                {
+                    document.getElementById('result').innerHTML = xmlhttp.responseText;
+                }
+            }
+
+        </script>
+
+
+        <title>Store Data on Server</title>
+    </head>
+    <body>
+        <label for="band1" /><input type="text" id="band1" />
+        <label for="band2" /><input type="text" id="band2" />
+        <label for="band3" /><input type="text" id="band3" />
+        <button id="btnStore">Store On Server</button>
+        <div id="result"></div>
+
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>

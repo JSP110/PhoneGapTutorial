@@ -1,0 +1,38 @@
+﻿@media handheld
+{
+    html, body
+    {
+        font: 12px/15px sans-serif;
+        padding: 3px;
+        margin: 0;
+    }
+
+    h1,h2,h3,h4,h5,h6
+    {
+        font-weight: normal
+    }
+}
+
+/*Smartphone Layout (landscape)
+
+*/
+@media only screen
+and (min-width: 321px)
+{
+    /* Styles for smartphone landscape */
+}
+
+/*Smarphone Portrait */
+@media only screen
+and (max-width: 320px)
+{
+    /* Portrait */
+}
+
+/*iPads*/
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px);
+{
+    /* iPad Styles */
+}
