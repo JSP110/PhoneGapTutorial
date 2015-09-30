@@ -42,38 +42,40 @@
               <h1>RepoFinder</h1>
             </header>
 
-            <div data-role='content'>
-                <form>
-                    <input type="text" data-type="search" placeholder="Search by user..." />
-                    <button type="button" id="search_btn">Search</button>
-                </form>
-            </div>
+                <div data-role="content">
+                    <form>
+                        <input id="search_input" type="text" data-type="search" placeholder="Search by User...">
+                        <button type="button" id="search_btn">Search</button>
+                    </form>
 
-              <div id="user_info"></div>
+                    <div id="user_info"></div>
 
-              <ul id="search_list" data-role="listview"></ul> 
+                    <ul id="search_list" data-role="listview"></ul>
 
-              <br /><br />
-              <h3>Latest Repos</h3>
-              <ul id="repo_list" data-role="listview">
-                  <li>
-                    <img class="thumbnail" src="img/profile.png" />
-                    <h1><a href="#">Repo Name</a></h1>
-                    <p>By JSP110</p>
-                  </li>
-                  <li>
-                      <img class="thumbnail" src="img/profile.png" />
-                      <h1><a href="#">Repo Name</a></h1>
-                      <p>By JSP110</p>
-                  </li>
-                  <li>
-                      <img class="thumbnail" src="img/profile.png" />
-                      <h1><a href="#">Repo Name</a></h1>
-                      <p>By JSP110</p>
-                  </li>
-
-              </ul>
-              
+                    <br><br>
+                    <h3>Latest Repos</h3>
+                    <form class="ui-filterable">
+                        <input type="text" data-type="search" id="filterBasic-input" placeholder="Filter Items...">
+                    </form>
+                    <ul id="repo_list" data-role="listview" data-filter="true" data-input="#filterBasic-input"></ul>
+                  <!-- <li>
+          <img class="thumbnail" src="img/profile.png" />
+          <h1><a href="#">Repo Name</a></h1>
+          <p>By JSP110</p>
+        </li>
+        <li>
+            <img class="thumbnail" src="img/profile.png" />
+            <h1><a href="#">Repo Name</a></h1>
+            <p>By JSP110</p>
+        </li>
+        <li>
+            <img class="thumbnail" src="img/profile.png" />
+            <h1><a href="#">Repo Name</a></h1>
+            <p>By JSP110</p>
+        </li>
+            -->
+                  
+              </div>  
 
             <footer data-role='footer'>
               <h3>Copyright &copy; 2015</h3>
